@@ -1,0 +1,254 @@
+.filter-menu {
+    .filter-menu-item {
+        display: inline-block;
+        font-family: $btn-font-family;
+        font-weight: $btn-font-weight;
+        color: $body-color;
+        text-align: center;
+        text-decoration: if($link-decoration==none, null, none);
+        white-space: $btn-white-space;
+        vertical-align: middle;
+        user-select: none;
+        background-color: transparent;
+        border: $btn-border-width solid transparent;
+        padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+        line-height: $line-height-base;
+        border-radius: $border-radius-sm;
+        font-size: $input-btn-font-size-sm;
+        margin: 4px 2px;
+        // @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $input-btn-font-size-sm, $line-height-sm, $btn-border-radius-sm);
+
+        border-color: $gray-300;
+        transition: $btn-transition;
+
+        &.active {
+            color: $white !important;
+            background-color: $primary !important;
+            border-color: $primary !important;
+        }
+
+        &:focus,
+        &.focus {
+            outline: 0;
+            box-shadow: $btn-focus-box-shadow;
+        }
+
+        // Disabled comes first so active can properly restyle
+        &.disabled,
+        &:disabled {
+            opacity: $btn-disabled-opacity;
+            @include box-shadow(none);
+        }
+
+        &:not(:disabled):not(.disabled) {
+            // cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
+
+            &:active,
+            &.active {
+                @include box-shadow($btn-active-box-shadow);
+
+                &:focus {
+                    @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+                }
+            }
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $white;
+            box-shadow: 0 1px 3px rgba(60, 72, 88, 0.15), 0 2px 4px 2px rgba(60, 72, 88, 0.18);
+        }
+    }
+}
+
+.masonry-grid {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transition: height 0.3s ease-out, opacity 0.3s ease-out 0.3s;
+    [data-masonry-el] {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.3s ease-in-out;
+    }    
+}
+
+
+
+
+
+// для титульной страницы
+
+.pretty-list {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding-left: 0; /* Убираем базовый отступ */
+}
+
+.pretty-list li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    display: flex; /* Для точного выравнивания галочки и текста */
+    align-items: flex-start; /* Текст и галочка выравниваются по верху */
+}
+
+.pretty-list li::before {
+    content: "✓"; /* Кастомная галочка */
+    color: #28a745; /* Зеленый цвет */
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 0.25rem; /* Минимальный отступ между галочкой и текстом */
+    line-height: 1; /* Выравнивание по высоте */
+}
+
+
+
+
+
+// ReferenceSection.scss
+.reference-container {
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+
+    .left-panel {
+        width: 30%;
+        background-color: #f5f5f5;
+        padding: 15px;
+        overflow-y: auto;
+        border-right: 1px solid #ddd;
+
+        h2 {
+            margin: 0 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+
+            &:focus {
+                outline: none;
+                border-color: #007bff;
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+            }
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+
+            .category-item {
+                padding: 10px;
+                cursor: pointer;
+                border-bottom: 1px solid #eee;
+                transition: background-color 0.2s;
+
+                &:hover {
+                    background-color: #e0e0e0;
+                }
+
+                &.active {
+                    background-color: #d0d0d0;
+                    font-weight: bold;
+                }
+
+                .subcategory-list {
+                    list-style: none;
+                    padding-left: 20px;
+                    margin: 5px 0;
+
+                    .subcategory-item {
+                        padding: 5px;
+                        cursor: pointer;
+                        transition: background-color 0.2s;
+
+                        &:hover {
+                            background-color: #e8e8e8;
+                        }
+
+                        &.active {
+                            background-color: #e8e8e8;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right-panel {
+        width: 70%;
+        padding: 20px;
+
+        h3 {
+            margin: 0 0 10px;
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.5;
+        }
+    }
+}
+
+
+
+// src/components/layout/AppMenu.scss
+.custom-navbar-nav {
+    display: flex;
+    flex-wrap: nowrap; // Все пункты в одной строке
+    gap: 8px; // Компактные отступы между пунктами
+    padding: 0;
+
+    .nav-item {
+        margin: 0; // Убираем лишние отступы
+
+        .custom-nav-link {
+            padding: 6px 10px; // Уменьшенные отступы для компактности
+            font-size: 14px; // Компактный шрифт
+            white-space: nowrap; // Запрет переноса текста
+            color: #333;
+            transition: background-color 0.2s, color 0.2s;
+            border-radius: 4px;
+
+            &:hover {
+                background-color: #f5f5f5;
+                color: #007bff;
+            }
+
+            &.active {
+                background-color: #c5e5ff;
+                color: #fff;
+            }
+        }
+    }
+
+    // Адаптивность для мобильных устройств
+    @media (max-width: 991px) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        .nav-item {
+            width: 100%;
+
+            .custom-nav-link {
+                padding: 10px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 1400px; // Настройте под ваш дизайн
+}
