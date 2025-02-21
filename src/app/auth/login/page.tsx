@@ -27,11 +27,11 @@ const Login = () => {
                           <Image src={logo} className="align-self-center" alt="logo-img" height={30} />
                         </Link>
                       </div>
-                      <h6 className="h5 mb-0 mt-3">Welcome back!</h6>
-                      <p className="text-muted mt-1 mb-4">Enter your email address and password to access admin panel.</p>
+                      <h6 className="h5 mb-0 mt-3">Сәлем!</h6>
+                      <p className="text-muted mt-1 mb-4">Авторизуйтесь в платформе для получения полного доступа.</p>
                       <LoginForm />
                       <div className="py-3 text-center">
-                        <span className="fs-13 fw-bold">OR</span>
+                        <span className="fs-13 fw-bold">или</span>
                       </div>
                       <div className="row">
                         <Col xs={12} className="text-center">
@@ -54,9 +54,9 @@ const Login = () => {
             <Row className="mt-3">
               <Col xs={12} className="text-center">
                 <p className="text-muted">
-                  Don&apos;t have an account?{' '}
+                  Нет аккунта? не беда! {' '}
                   <Link href="/auth/sign-up" className="text-primary fw-semibold ms-1">
-                    Sign Up
+                    Зарегистрироватся
                   </Link>
                 </p>
               </Col>

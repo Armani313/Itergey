@@ -224,18 +224,18 @@ const features: FeatureType[] = [
 
 const authSwiperSlides: AuthSwiperType[] = [
   {
-    title: 'Manage your saas business with ease',
-    description: 'Make your saas application stand out with high-quality landing page designed and developed by professional.',
+    title: 'Получите доступ к детально структурированной базе данных',
+    description: 'скрупулезно собранная информация высококвалифицированными специалистами в сфере юридических наук ',
     image: sass1,
   },
   {
-    title: 'The best way to showcase your mobile app',
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.',
+    title: 'Самый лучший источник знании для ваших не решимых задач',
+    description: 'множество шаблонов документов от процессуальных до реальных судебных актов',
     image: sass2,
   },
   {
-    title: 'Smart Solution that convert Lead to Customer',
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.',
+    title: 'Умное решение для образовательных платформ',
+    description: 'Круглосуточный доступ к научным трудам',
     image: sass3,
   },
 ]
